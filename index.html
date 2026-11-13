@@ -1,0 +1,634 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Кубик Рубика по CFOP — самоучитель с 3D-кубом до скоростей топ-уровня</title>
+  <meta name="description" content="Самоучитель по CFOP (метод Фридрих) с интерактивным 3D-кубом: F2L, все 57 OLL и 21 PLL, X-Cross, план тренировок и подготовка к турниру WCA.">
+  <link rel="stylesheet" href="css/style.css">
+  <script>document.documentElement.className += ' js-tabs';</script>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="brand" href="#goal" aria-label="CFOP Путь — на главную"><span class="brand-cube" aria-hidden="true"></span><span class="brand-text">CFOP&nbsp;Путь</span></a>
+  <nav class="nav" id="nav" aria-label="Разделы">
+    <a href="#goal">Цель</a>
+    <a href="#basics">Основы</a>
+    <a href="#cross">Крест</a>
+    <a href="#f2l">F2L</a>
+    <a href="#ll">OLL / PLL</a>
+    <a href="#advanced">Продвинутое</a>
+    <a href="#plan">План</a>
+    <a href="#tournament">Турнир</a>
+    <a href="#trainer">Тренажёр</a>
+    <a href="#sources">Ссылки</a>
+  </nav>
+</header>
+
+<div class="layout">
+<main class="content">
+
+<!-- ====================================================== ЦЕЛЬ -->
+<section id="goal" class="sec hero">
+  <p class="eyebrow">Самоучитель · CFOP · 3D</p>
+  <h1>Кубик Рубика по методу Фридрих — путь до скоростей топ-уровня</h1>
+  <p class="lead">Справа — настоящий 3D-куб. Нажимай <b>«▶ 3D»</b> у любого алгоритма: куб покажет его по ходам, а ты можешь остановить, отмотать и покрутить куб пальцем или мышью. Метод — <b>CFOP</b> с продвинутыми техниками: X-Cross, нейтральность цветов, COLL/ZBLL.</p>
+
+  <div class="callout warn">
+    <h3>Честно про «5 секунд»</h3>
+    <ul>
+      <li>Мировой рекорд на одну сборку — <b>2,51 с</b> (Xuanyi Geng, Guangzhou Grand Open 2026, октябрь 2026). Рекорд среднего из пяти — <b>3,51 с</b> (Yiheng Wang, Hefei Cubing League 3x3 III 2026, июнь 2026). Данные WCA.</li>
+      <li><b>Среднее быстрее 5 секунд — это мировой топ.</b> Туда идут годами ежедневной практики, и за «несколько месяцев» это не получается ни у кого. Обещать обратное было бы враньём.</li>
+      <li>Зато <b>отдельные сборки быстрее 5 с</b> реальны намного раньше. Они случаются у тех, кто в среднем собирает за ~8–10 с, на удачных скрамблах: X-Cross, пропуск PLL и т. п.</li>
+      <li>Поэтому здесь не «чудо-метод», а <b>лестница целей</b>. Каждая ступень измерима, и у каждой понятно, что тренировать.</li>
+    </ul>
+  </div>
+
+  <h3>Лестница целей <small>(очень приблизительно, у всех по-разному)</small></h3>
+  <div class="table-wrap">
+  <table class="table">
+    <thead><tr><th>Ступень</th><th>Среднее</th><th>Ориентир по времени</th><th>Главный фокус</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>&lt; 1:00</td><td>2–6 недель</td><td>CFOP «лайт»: крест, F2L слоями, 2-look OLL и PLL (16 алгоритмов)</td></tr>
+      <tr><td>2</td><td>&lt; 30 с</td><td>2–5 месяцев</td><td>Интуитивный F2L, полный крест в осмотре, пальцевая техника</td></tr>
+      <tr><td>3</td><td>&lt; 20 с</td><td>5–10 месяцев</td><td>Все 21 PLL, начало OLL, look-ahead (смотреть на следующую пару)</td></tr>
+      <tr><td>4</td><td>&lt; 12 с</td><td>1–2 года</td><td>Все 57 OLL, X-Cross, эффективность ходов</td></tr>
+      <tr><td>5</td><td>&lt; 8 с</td><td>2–4 года</td><td>Нейтральность цветов, COLL/ZBLL выборочно, турнирный опыт</td></tr>
+      <tr><td>6</td><td>отдельные &lt; 5 с</td><td>от среднего ~10 с</td><td>Скорость 8+ ходов/с, X-Cross в осмотре, повороты без пауз</td></tr>
+      <tr><td>7</td><td><b>среднее &lt; 5 с</b></td><td>мировой топ</td><td>Всё выше + много лет турниров</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="muted">Сроки взяты из опыта сообщества (форумы SpeedSolving и обзоры по CFOP), а не из исследований. Сильно зависят от количества практики и качества тренировок.</p>
+
+  <div class="callout tip">
+    <h3>А турнир — когда?</h3>
+    <p>Сразу, как только соберёшь куб без подсказок за пару минут. Официальный турнир WCA — не экзамен, а тренировка нервов: результат не нужен, а опыт ускоряет рост. Подробности — в разделе <a href="#tournament">«Турнир»</a>.</p>
+  </div>
+</section>
+
+<!-- ====================================================== ОСНОВЫ -->
+<section id="basics" class="sec">
+  <h2><span class="num">0</span> Основы: куб, цвета, нотация</h2>
+
+  <div class="card">
+    <h3>Как устроен куб</h3>
+    <p>У куба 26 видимых деталей: <b>6 центров</b> (по одному на грань, они не меняют положения относительно друг друга), <b>12 рёбер</b> (два цвета) и <b>8 углов</b> (три цвета). Центры задают цвет грани, как система координат.</p>
+    <p>Цвета напротив друг друга: <b>белый — жёлтый</b>, <b>зелёный — синий</b>, <b>красный — оранжевый</b>. Нажми кнопку, и 3D-куб подсветит нужные детали:</p>
+    <div class="btn-row">
+      <button class="btn btn-goal" data-focus="centers" data-title="Центры" data-note="6 центров. Они не двигаются относительно друг друга — по ним определяешь, какого цвета должна быть грань.">Центры</button>
+      <button class="btn btn-goal" data-focus="edges" data-title="Рёбра" data-note="12 рёбер — детали с двумя цветами.">Рёбра</button>
+      <button class="btn btn-goal" data-focus="corners" data-title="Углы" data-note="8 углов — детали с тремя цветами.">Углы</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Как держать куб на сайте</h3>
+    <p>Везде на странице куб лежит так: <b>жёлтый центр сверху, зелёный — на тебя, белый внизу</b>. В CFOP крест собирают на нижней грани, чтобы пары F2L были видны сверху. Если крутишь в руках настоящий куб, держи его так же — и все алгоритмы совпадут с 3D.</p>
+  </div>
+
+  <div class="card">
+    <h3>Нотация — язык алгоритмов</h3>
+    <ul class="plain">
+      <li><b>R L U D F B</b> — правая, левая, верхняя, нижняя, передняя, задняя грань: поворот на 90° <b>по часовой стрелке</b>, если смотреть на эту грань.</li>
+      <li><b>R'</b> («R штрих») — против часовой стрелки. <b>R2</b> — на 180°.</li>
+      <li><b>x y z</b> — повернуть весь куб: x — как R, y — как U, z — как F.</li>
+      <li><b>r f</b> (строчные) — два слоя сразу: r — правые два слоя, f — передние два. <b>M</b> — средний слой между L и R (направление как у L).</li>
+    </ul>
+    <p>Нажимай на ходы — куб покажет каждый:</p>
+    <div class="chips" data-chips="R R' R2 L L' L2 U U' U2 D D' D2 F F' F2 B B' B2"></div>
+    <div class="chips" data-chips="x y z r f M"></div>
+    <div class="callout tip">
+      <p><b>Разминка для пальцев:</b> «секси-мув» <code>R U R' U'</code> шесть раз подряд возвращает куб в исходное состояние. Это самый частый триггер в CFOP, начни тренировать его с первого дня.</p>
+      <div class="alg" data-alg="R U R' U'" data-repeat="6" data-title="Секси-мув × 6" data-note="Шесть повторов R U R' U' возвращают куб в собранное состояние."></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================== КРЕСТ -->
+<section id="cross" class="sec">
+  <h2><span class="num">1</span> Крест (Cross)</h2>
+  <p class="lead">Первая цель — четыре белых ребра вокруг белого центра <b>на нижней грани</b>, причём второй цвет каждого ребра совпадает с центром его боковой грани.</p>
+  <div class="btn-row">
+    <button class="btn btn-goal" data-focus="cross" data-view="bottom" data-title="Цель: белый крест" data-note="Вид снизу. Подсвечены детали, которые должны быть на месте: белый крест + центры. Боковые цвета рёбер совпадают с центрами.">Показать цель на 3D</button>
+  </div>
+
+  <div class="card">
+    <h3>Старт: «ромашка» → крест</h3>
+    <ol>
+      <li>Держи куб <b>жёлтым центром вверх</b>.</li>
+      <li>Собери «ромашку»: четыре белых ребра вокруг жёлтого центра, белые наклейки смотрят <b>вверх</b>.</li>
+      <li>Поворачивай верхний слой, пока второй цвет ребра не окажется над центром такого же цвета, и поверни эту грань на <b>180°</b>. Белое ребро упадёт вниз. Повтори для всех четырёх.</li>
+    </ol>
+    <p>Посмотри на примере: сверху ромашка, одно ребро надо подогнать поворотом <code>U'</code>, потом четыре поворота на 180°.</p>
+    <div class="alg" data-setup="F2 R2 B2 L2 U" data-alg="U' L2 B2 R2 F2" data-title="Ромашка → белый крест" data-note="Сначала верхним слоем подгоняем цвета ребра под центры, потом каждую грань на 180° — и белый крест на дне."></div>
+
+    <h4>Как поднять белое ребро в ромашку</h4>
+    <ul class="plain">
+      <li><b>Белая наклейка смотрит вниз</b> (ребро в нижнем слое): поверни нижний слой, чтобы ребро встало под свободное место ромашки, и поверни эту грань на 180° (F2, R2…).</li>
+      <li><b>Белая наклейка на боковой грани</b>, ребро в верхнем или нижнем слое: поверни грань, на которой стоит белая наклейка, на 90° — ребро уйдёт в средний слой.</li>
+      <li><b>Ребро в среднем слое</b>: поверни ту из двух его граней, на которой <b>нет</b> белой наклейки, так, чтобы ребро поднялось вверх — белый окажется сверху.</li>
+      <li>Если на пути стоит готовый лепесток, сначала отверни верхний слой (U), а после вернёшь.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Как крест становится быстрым</h3>
+    <ul class="plain">
+      <li><b>Сразу на дне, без ромашки.</b> Как только поймёшь принцип, собирай крест на нижней грани напрямую: цель — не больше <b>8 ходов</b>. Практика: 20 скрамблов подряд, на каждом считай ходы.</li>
+      <li><b>Осмотр (15 секунд).</b> По правилам WCA до старта у тебя 15 секунд на осмотр, куб крутить нельзя. Планируй <b>весь крест целиком</b> и сразу ищи первую пару F2L. У топов в осмотре — крест плюс первая пара.</li>
+      <li><b>Без поворотов куба.</b> Решай крест на нижней грани так, чтобы не крутить куб в руках — каждая пауза стоит времени.</li>
+      <li><b>Нейтральность цветов.</b> Научись начинать не только с белого — см. раздел <a href="#advanced">«Продвинутое»</a>.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ====================================================== F2L -->
+<section id="f2l" class="sec">
+  <h2><span class="num">2</span> F2L — первые два слоя</h2>
+  <p class="lead">F2L (First Two Layers) — главный источник скорости: на него уходит около половины времени сборки. Идея — собирать <b>пару</b> из угла и ребра и вставлять её в слот одним движением. Заходим в два этапа.</p>
+  <div class="btn-row">
+    <button class="btn btn-goal" data-focus="layer1" data-view="bottom" data-title="Цель: первый слой" data-note="Белая грань целиком + боковые цвета первого слоя совпадают с центрами.">Цель: первый слой</button>
+    <button class="btn btn-goal" data-focus="f2l" data-view="bottom" data-title="Цель: F2L" data-note="Два нижних слоя собраны. Остаётся верхний (жёлтый) слой — его делают OLL и PLL.">Цель: F2L целиком</button>
+  </div>
+
+  <div class="subtabs" role="tablist" aria-label="Подразделы F2L">
+    <button type="button" data-sub="layers">А · Слоями (с нуля)</button>
+    <button type="button" data-sub="pairs">Б · Пары F2L</button>
+    <button type="button" data-sub="train">Как тренировать</button>
+  </div>
+
+  <div class="subpanel" data-sub="layers">
+  <h3>Этап А. F2L «слоями»: углы, затем рёбра</h3>
+  <p>Пока не получается собирать пары, делай F2L в два приёма. Это скорость порядка 40–60 секунд, но алгоритмов почти нет.</p>
+
+  <div class="card step">
+    <h4>А1. Белые углы</h4>
+    <p>Белый крест внизу. Найди белый угол в верхнем слое, поверни <code>U</code> так, чтобы он оказался над своим местом (между центрами своих двух цветов, в позиции «справа-спереди»). Повторяй <code>R U R' U'</code>, пока угол не встанет белой наклейкой вниз. Нужно <b>1, 3 или 5 повторов</b>, в зависимости от того, куда смотрит белая наклейка:</p>
+    <div class="alg" data-alg="R U R' U'" data-repeat="1" data-case="1" data-title="Белый смотрит ВПРАВО — 1 повтор"></div>
+    <div class="alg" data-alg="R U R' U'" data-repeat="3" data-case="1" data-title="Белый смотрит ВВЕРХ — 3 повтора"></div>
+    <div class="alg" data-alg="R U R' U'" data-repeat="5" data-case="1" data-title="Белый смотрит ВПЕРЁД — 5 повторов"></div>
+    <p class="muted">Угол уже в нижнем слое, но стоит неправильно? Поставь его в позицию «справа-спереди» и один раз выполни <code>R U R' U'</code>, чтобы вытолкнуть наверх, затем действуй как выше. Всегда доводи алгоритм до конца, не останавливайся посередине.</p>
+  </div>
+
+  <div class="card step">
+    <h4>А2. Рёбра среднего слоя</h4>
+    <p>Найди в верхнем слое ребро <b>без жёлтого</b>. Поверни <code>U</code>, чтобы его передний цвет совпал с передним центром. Посмотри на цвет сверху: если он должен уйти вправо, делаем первый алгоритм, если влево, второй.</p>
+    <div class="alg" data-alg="U R U' R' U' F' U F" data-case="1" data-title="Ребро вправо" data-note="Ребро уходит в средний слой справа."></div>
+    <div class="alg" data-alg="U' L' U L U F U' F'" data-case="1" data-title="Ребро влево" data-note="Ребро уходит в средний слой слева."></div>
+    <p class="muted">Ребро застряло в среднем слое не на своём месте или перевёрнуто? Выполни алгоритм для любого верхнего ребра на этом месте, чтобы вытолкнуть его наверх, а затем вставь правильно.</p>
+  </div>
+
+  </div>
+
+  <div class="subpanel" data-sub="pairs">
+  <h3>Этап Б. Настоящий F2L: пары</h3>
+  <div class="card">
+    <h4>Как думать</h4>
+    <ol>
+      <li><b>Найди пару</b>: угол и ребро, которые должны оказаться в одном слоте (цвета ребра = два боковых цвета угла).</li>
+      <li><b>Склей</b> их в верхнем слое так, чтобы одинаковые цвета смотрели на одну сторону, оставив слот свободным.</li>
+      <li><b>Вставь</b> пару над слотом коротким движением (<code>R U R'</code>, <code>F' U' F</code>, <code>U R U' R'</code> и т. п.).</li>
+      <li>Пока вставляешь, <b>уже ищи следующую пару</b> (look-ahead). Без этого быстрее ~20 секунд не стать.</li>
+    </ol>
+    <div class="callout info">
+      <p><b>Принципы скорости:</b> без пауз между парами; почти без поворотов куба; не «чинить» пары — лучше увести проблему в сторону и собрать иначе; помни, что красивая пара в верхнем слое — это 3–4 хода, а плохая — 9 и больше.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h4>Базовые случаи F2L (проверены симулятором)</h4>
+    <p>Все слоты симметричны, ниже случаи для слота «справа-спереди» (белый + зелёный + оранжевый, когда жёлтый сверху, а зелёный спереди). Нажми «▶ 3D» — куб расставит случай и решит его. Остальные 41 случай ты увидишь в видео, см. <a href="#sources">ссылки</a>. Главное — понимать, <i>почему</i> работает, а не зубрить.</p>
+    <div id="f2lList" class="f2l-list"></div>
+  </div>
+
+  </div>
+
+  <div class="subpanel" data-sub="train">
+  <div class="card">
+    <h4>Как тренировать F2L</h4>
+    <ul class="plain">
+      <li><b>Медленно и без пауз.</b> «Slow solve»: крути на ~50% скорости, но без остановок. Скорость сама придёт.</li>
+      <li><b>Cross + 1 пара</b> по 15 раз подряд, потом cross + 2 пары.</li>
+      <li><b>Одна рука / один слот</b>: заставь себя решать пары только через определённый слот.</li>
+      <li><b>Разбор.</b> Записывай сборки на видео и смотри, где пауза: ищешь ли ты пару в момент вставки предыдущей.</li>
+    </ul>
+  </div>
+  </div>
+</section>
+
+<!-- ====================================================== OLL / PLL -->
+<section id="ll" class="sec">
+  <h2><span class="num">3–4</span> OLL и PLL — последний слой</h2>
+  <p class="lead">OLL — сделать весь верхний слой жёлтым. PLL — расставить детали верхнего слоя по местам. Сначала «2-look» (16 алгоритмов), потом полные наборы: 57 OLL и 21 PLL.</p>
+  <div class="callout info">
+    <p><b>Как читать диаграммы.</b> Это вид <b>сверху</b>. На OLL жёлтое — стикер смотрит вверх, серое — нет (по краям — боковые стикеры верхнего слоя). На PLL показаны все цвета. Поверни верхний слой и/или куб так, чтобы картинка совпала с тем, что у тебя в руках, и применяй алгоритм. Диаграммы сгенерированы тем же симулятором, что и 3D, так что они не врут.</p>
+  </div>
+
+  <div class="subtabs" role="tablist" aria-label="Подразделы OLL и PLL">
+    <button type="button" data-sub="two">2-look · 16 алгоритмов</button>
+    <button type="button" data-sub="pll">PLL · 21</button>
+    <button type="button" data-sub="oll">OLL · 57</button>
+  </div>
+
+  <div class="subpanel" data-sub="two">
+  <h3>2-look OLL</h3>
+  <h4>Сначала жёлтый крест</h4>
+  <div class="case-grid" data-list="oll2Edges" data-mode="oll" data-prefix="Жёлтый крест"></div>
+  <p class="muted">Из точки: алгоритм линии, затем уголка. Если крест уже есть — сразу к углам.</p>
+  <h4>Потом углы (7 случаев)</h4>
+  <p class="muted">Подсказка: посчитай жёлтые стикеры в углах сверху. <b>0</b> — H или Pi; <b>1</b> — Сюне или Анти-сюне; <b>2</b> — U, T или L.</p>
+  <div class="case-grid" data-list="oll2Corners" data-mode="oll" data-prefix="OLL углы"></div>
+
+  <h3>2-look PLL</h3>
+  <h4>Сначала углы</h4>
+  <p class="muted"><b>Aa</b>, если есть «фары» (два соседних угла одного цвета на одной грани); <b>Y</b>, если фар нет (диагональная замена углов). После — поворот <code>U</code> до совпадения углов.</p>
+  <div class="case-grid" data-pll="Aa,Y" data-mode="pll" data-prefix="PLL углы"></div>
+  <h4>Потом рёбра</h4>
+  <p class="muted"><b>Ua / Ub</b> — один бок уже готов, три ребра по кругу; <b>H</b> — противоположные рёбра меняются местами; <b>Z</b> — соседние.</p>
+  <div class="case-grid" data-pll="Ua,Ub,H,Z" data-mode="pll" data-prefix="PLL рёбра"></div>
+
+  </div>
+
+  <div class="subpanel" data-sub="pll">
+  <h3>Полный PLL (21)</h3>
+  <p>Начинай с PLL, а не с OLL: 21 алгоритм дают быстрый рост (OLL отнимет сильно больше времени). Рекомендуемый порядок: Ua, Ub, H, Z, Aa, Ab, T, J, Y, R, F, V, N, E и в конце G-перестановки.</p>
+  <div class="lib-tools">
+    <span class="counter">Выучено: <b id="cntPll">0</b>/21</span>
+    <button class="btn btn-sm" data-quiz="pll">🎲 Случайный PLL</button>
+  </div>
+  <div id="pllLib" class="lib" data-lib="pll"></div>
+
+  </div>
+
+  <div class="subpanel" data-sub="oll">
+  <h3>Полный OLL (57)</h3>
+  <p>Учи по 3–4 алгоритма в неделю, группами по форме. Сначала 7 OCLL («крест») и случаи с линией, затем остальное. Не переходи к следующему, пока предыдущий не получается с первого раза «на автомате».</p>
+  <div class="lib-tools">
+    <span class="counter">Выучено: <b id="cntOll">0</b>/57</span>
+    <input id="ollSearch" class="input" type="search" placeholder="Поиск: номер или название…" aria-label="Поиск OLL">
+    <select id="ollGroup" class="input" aria-label="Группа OLL"><option value="">Все группы</option></select>
+    <button class="btn btn-sm" data-quiz="oll">🎲 Случайный OLL</button>
+  </div>
+  <div id="ollLib" class="lib" data-lib="oll"></div>
+
+  </div>
+
+  <!-- тренировка распознавания: скрипт переносит её под кнопку «Случайный …» нужной подвкладки -->
+  <div id="quizBox" class="card quiz" hidden>
+    <h4>Тренировка распознавания</h4>
+    <p class="muted">Посмотри на диаграмму: что за случай и какой алгоритм? Подумай, потом нажми «Показать».</p>
+    <div class="quiz-body"><div id="quizDiag"></div><div id="quizAns" class="quiz-ans"></div></div>
+    <div class="btn-row">
+      <button class="btn" id="quizShow">Показать ответ</button>
+      <button class="btn" id="quizNext">Следующий</button>
+      <label class="check"><input type="checkbox" id="quizOnlyNew"> только невыученные</label>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================== ПРОДВИНУТОЕ -->
+<section id="advanced" class="sec">
+  <h2><span class="num">5</span> Продвинутые техники для скорости топ-уровня</h2>
+  <p class="lead">После полного CFOP скорость растёт не за счёт новых алгоритмов, а за счёт <b>выбора лучшего решения</b>, плавности и эффективности ходов. Вот то, чем отличаются сборки под 10 секунд.</p>
+
+  <div class="subtabs" role="tablist" aria-label="Подразделы">
+    <button type="button" data-sub="start">Начало: X-Cross и цвета</button>
+    <button type="button" data-sub="ll">Последний слой: дальше 57 + 21</button>
+    <button type="button" data-sub="gear">Руки и железо</button>
+  </div>
+
+  <div class="subpanel" data-sub="start">
+  <div class="card">
+    <h3>X-Cross и XX-Cross</h3>
+    <p><b>X-Cross</b> — решить крест сразу вместе с первой парой F2L: на нижней грани оказывается крест плюс один собранный слот (4 ребра + 1 угол + 1 ребро). <b>XX-Cross</b> — крест плюс <b>две</b> пары. Это экономит ходы и время, а пока X-Cross решается плавно, у тебя в осмотре уже есть план всего начала.</p>
+    <div class="btn-row">
+      <button class="btn btn-goal" data-focus="xcross" data-view="bottom" data-title="Цель: X-Cross" data-note="Крест + один слот F2L (угол и ребро справа-спереди). Остальное — пока не важно.">Показать X-Cross</button>
+      <button class="btn btn-goal" data-focus="xxcross" data-view="bottom" data-title="Цель: XX-Cross" data-note="Крест + два соседних слота F2L.">Показать XX-Cross</button>
+    </div>
+    <p><b>Как тренировать:</b> на медленных сборках в осмотре ищи, нет ли готового угла и ребра, которые можно присоединить к кресту «по пути». Сначала не гонись за скоростью: отмечай, насколько часто получается найти X-Cross. На уровне ~15–20 с это начинает получаться на 1 из 5–10 сборок.</p>
+  </div>
+
+  <div class="card">
+    <h3>Нейтральность цветов (Color Neutrality)</h3>
+    <p>Не только белый: начинать крест с любого цвета, который удобнее на этом скрамбле. Уровни: <b>1)</b> белый и жёлтый (две стороны); <b>2)</b> все шесть. Зачем: из 6 крестов (особенно с X-Cross) почти всегда найдётся короткий. Начинай, когда F2L и OLL/PLL уже уверенные: сначала жёлтый с белым (просто «перевернув» куб), потом остальные цвета.</p>
+  </div>
+
+  <div class="card">
+    <h3>Осмотр и look-ahead</h3>
+    <ul class="plain">
+      <li>В осмотре планируй <b>крест + первую пару</b>, не только крест.</li>
+      <li>Во время F2L глаза всегда на <b>следующей</b> паре, а не на той, которую крутишь.</li>
+      <li>Во время последней пары — уже распознавай <b>OLL</b>; во время OLL — уже распознавай <b>PLL</b>.</li>
+      <li>Пауза — главный враг: куб должен течь, как плавная музыка.</li>
+    </ul>
+  </div>
+
+  </div>
+
+  <div class="subpanel" data-sub="ll">
+  <div class="card">
+    <h3>Последний слой: за пределами 57 + 21</h3>
+    <ul class="plain">
+      <li><b>COLL</b> (40 случаев): ориентируешь углы + переставляешь их, если рёбра уже ориентированы. После — только <b>EPLL</b> (U/H/Z-перестановки), то есть меньше случаев «OLL + PLL».</li>
+      <li><b>ZBLL</b> (493 случая): весь последний слой за один алгоритм, если рёбра ориентированы. Выбирай ZBLL <b>выборочно</b>: сначала самые частые случаи с коротким алгоритмом.</li>
+      <li><b>OLLCP</b>: OLL, который заодно переставляет углы. Решение для тех, кто «упирается» в PLL.</li>
+      <li><b>Winter Variation / VLS / ZBLS</b>: комбинации «последняя пара + ориентация» и «первая пара + ориентация рёбер». Это самый тяжёлый уровень, где алгоритмов сотни.</li>
+    </ul>
+    <p class="muted">На скоростях до ~10 с всё это не нужно. Полный OLL/PLL и отличный F2L дают больше всего. Если хочешь смотреть, как топы решают, ищи видео рекордсменов: рекорд мира в среднем 3,84 с (январь 2026), по данным Ruwix, был поставлен именно на CFOP «с продвинутой работой с последним слоем».</p>
+  </div>
+
+  </div>
+
+  <div class="subpanel" data-sub="gear">
+  <div class="card">
+    <h3>Скорость рук и хват</h3>
+    <ul class="plain">
+      <li><b>TPS</b> (ходов в секунду). Грубая арифметика: 45 ходов при 9 ходах/с — это 5 секунд. Топ крутит 8–10 TPS, но с эффективным решением. Начинай не с «скорости», а с чистых пальцевых приёмов: U-повороты указательным, R и R' — кистью.</li>
+      <li><b>Хват</b> без лишних перехватов. Каждый перехват — потеря времени.</li>
+      <li><b>Алгоритмы «без перехватов»</b>: для каждого случая выбирай вариант, который ложится под твои пальцы, и именно его тренируй до автоматизма.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Железо</h3>
+    <ul class="plain">
+      <li><b>Магнитный скоростной куб</b> — базовый стандарт. Покупай по свежим обзорам: новые модели сильно лучше «ностальгических».</li>
+      <li><b>Смазка и настройка</b>: силиконовая смазка для кубов, пружины/магниты по вкусу. Куб должен быть «лёгким» в вертикальных поворотах и не заедать на углах.</li>
+      <li><b>Для турнира</b> куб должен соответствовать правилам WCA (все детали на месте, цвета однозначные).</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Другие методы (Roux, ZZ)</h3>
+    <p>Roux и ZZ тоже доходят до рекордов, но CFOP остаётся самым популярным у топ-солверов, и по нему больше всего материалов. Менять метод ради скорости не нужно: растёт тот, кто больше практикуется.</p>
+  </div>
+  </div>
+</section>
+
+<!-- ====================================================== ПЛАН -->
+<section id="plan" class="sec">
+  <h2><span class="num">6</span> План тренировок</h2>
+  <p class="lead">Отмечай выполненное — прогресс сохраняется в браузере. Ступени соответствуют «лестнице целей» на вкладке «Цель».</p>
+  <div class="progress-total"><div class="bar"><i id="planBar"></i></div><span id="planPct">0%</span></div>
+
+  <div class="subtabs" role="tablist" aria-label="Подразделы плана">
+    <button type="button" data-sub="stages">Ступени и чек-листы</button>
+    <button type="button" data-sub="day">Тренировка на день и месяц</button>
+  </div>
+
+  <div class="subpanel" data-sub="stages">
+
+  <div class="stage-grid">
+    <article class="stage card">
+      <h4>Ступень 1 · CFOP «лайт» <small>→ среднее &lt; 1:00 (недели 1–6)</small></h4>
+      <ul class="checklist">
+        <li><label><input type="checkbox" data-save="p1a"> Знаю нотацию (R L U D F B ' 2 x y z)</label></li>
+        <li><label><input type="checkbox" data-save="p1b"> Собираю белый крест без подсказок</label></li>
+        <li><label><input type="checkbox" data-save="p1c"> Вставляю белые углы и рёбра второго слоя</label></li>
+        <li><label><input type="checkbox" data-save="p1d"> 2-look OLL: крест (3) + углы (7)</label></li>
+        <li><label><input type="checkbox" data-save="p1e"> 2-look PLL: углы (2) + рёбра (4)</label></li>
+        <li><label><input type="checkbox" data-save="p1f"> 10 сборок подряд без ошибок</label></li>
+        <li><label><input type="checkbox" data-save="p1g"> Среднее из 12 &lt; 1:00</label></li>
+      </ul>
+    </article>
+    <article class="stage card">
+      <h4>Ступень 2 · Интуитивный F2L <small>→ &lt; 30 с (месяцы 1–5)</small></h4>
+      <ul class="checklist">
+        <li><label><input type="checkbox" data-save="p2a"> Крест на нижней грани за ≤ 8 ходов (в 80% случаев)</label></li>
+        <li><label><input type="checkbox" data-save="p2b"> Понимаю пары и 3 способа вставки</label></li>
+        <li><label><input type="checkbox" data-save="p2c"> Прошёл 22 базовых случая F2L</label></li>
+        <li><label><input type="checkbox" data-save="p2d"> Решаю F2L почти без поворотов куба</label></li>
+        <li><label><input type="checkbox" data-save="p2e"> Планирую весь крест в 15-секундном осмотре</label></li>
+        <li><label><input type="checkbox" data-save="p2f"> Среднее из 12 &lt; 30 с</label></li>
+      </ul>
+    </article>
+    <article class="stage card">
+      <h4>Ступень 3 · Полный CFOP <small>→ &lt; 20 с (месяцы 4–10)</small></h4>
+      <ul class="checklist">
+        <li><label><input type="checkbox" data-save="p3a"> Все 21 PLL (вкладка «OLL / PLL» → «PLL»)</label></li>
+        <li><label><input type="checkbox" data-save="p3b"> 30+ из 57 OLL</label></li>
+        <li><label><input type="checkbox" data-save="p3c"> Ищу следующую пару, не останавливаясь (look-ahead)</label></li>
+        <li><label><input type="checkbox" data-save="p3d"> Узнаю OLL/PLL за &lt; 1 с</label></li>
+        <li><label><input type="checkbox" data-save="p3e"> Среднее из 12 &lt; 20 с</label></li>
+      </ul>
+    </article>
+    <article class="stage card">
+      <h4>Ступень 4 · Продвинутый <small>→ &lt; 12 с (год 1–2)</small></h4>
+      <ul class="checklist">
+        <li><label><input type="checkbox" data-save="p4a"> Все 57 OLL</label></li>
+        <li><label><input type="checkbox" data-save="p4b"> Крест + первая пара в осмотре (X-Cross, когда есть)</label></li>
+        <li><label><input type="checkbox" data-save="p4c"> Нейтральность: белый и жёлтый</label></li>
+        <li><label><input type="checkbox" data-save="p4d"> Разбираю 3 самых медленных сборки в неделю</label></li>
+        <li><label><input type="checkbox" data-save="p4e"> Среднее из 12 &lt; 12 с</label></li>
+      </ul>
+    </article>
+    <article class="stage card">
+      <h4>Ступень 5 · Элита <small>→ &lt; 8 с, затем отдельные &lt; 5 с (годы)</small></h4>
+      <ul class="checklist">
+        <li><label><input type="checkbox" data-save="p5a"> Полная нейтральность цветов</label></li>
+        <li><label><input type="checkbox" data-save="p5b"> COLL / ZBLL — самые частые случаи</label></li>
+        <li><label><input type="checkbox" data-save="p5c"> Минимум 10 официальных турниров</label></li>
+        <li><label><input type="checkbox" data-save="p5d"> Среднее из 12 &lt; 8 с</label></li>
+        <li><label><input type="checkbox" data-save="p5e"> Первая официальная сборка &lt; 5 с</label></li>
+      </ul>
+    </article>
+  </div>
+  </div>
+
+  <div class="subpanel" data-sub="day">
+  <div class="card">
+    <h3>Тренировка на день (60–90 минут)</h3>
+    <div class="table-wrap"><table class="table">
+      <thead><tr><th>Время</th><th>Что делать</th></tr></thead>
+      <tbody>
+        <tr><td>5–10 мин</td><td>Разминка: несколько медленных сборок, секси-мув, любимые триггеры</td></tr>
+        <tr><td>20 мин</td><td><b>Медленные сборки</b> (slow solves) с упором на look-ahead и плавность. Не гонись за временем.</td></tr>
+        <tr><td>15 мин</td><td><b>Алгоритмы</b>: 2–3 новых + повтор старых. Каждый — минимум 20 раз подряд.</td></tr>
+        <tr><td>15 мин</td><td><b>Целевая практика</b>: cross-only, cross + 1 пара, F2L на время, PLL-распознавание.</td></tr>
+        <tr><td>15 мин</td><td><b>Зачётные сборки</b>: серия по 12, фиксируй среднее.</td></tr>
+        <tr><td>5–10 мин</td><td>Разбор худших сборок: где была пауза?</td></tr>
+      </tbody>
+    </table></div>
+    <ul class="plain">
+      <li>Лучше <b>регулярно и коротко</b>, чем раз в неделю по 5 часов. Мышцы и мозг запоминают при повторении.</li>
+      <li><b>Береги руки.</b> Появилась боль в запястье или пальцах — сделай перерыв.</li>
+      <li>Раз в неделю — «контрольный» ao12 (среднее из 12): так видно реальный прогресс.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Если турнир — через месяц</h3>
+    <p>Через месяц ты вполне можешь быть на ступени 1 (среднее ~1 минута) — и этого достаточно, чтобы поехать. Задача на первом турнире — собрать все пять попыток без DNF и привыкнуть к обстановке, а не показать результат.</p>
+  </div>
+  </div>
+</section>
+
+<!-- ====================================================== ТУРНИР -->
+<section id="tournament" class="sec">
+  <h2><span class="num">7</span> Турнир WCA</h2>
+  <p class="lead">Официальные соревнования проводятся по правилам <b>World Cube Association (WCA)</b>. Участвовать может любой, рекорд для этого не нужен.</p>
+
+  <div class="subtabs" role="tablist" aria-label="Подразделы турнира">
+    <button type="button" data-sub="reg">Как записаться</button>
+    <button type="button" data-sub="day">В день турнира: попытка, штрафы, формат</button>
+    <button type="button" data-sub="check">Чек-лист</button>
+  </div>
+
+  <div class="subpanel" data-sub="reg">
+  <div class="card">
+    <h3>Как найти турнир и записаться</h3>
+    <ol>
+      <li>Создай аккаунт на сайте WCA. Если уже был на турнире, привяжи свой WCA ID.</li>
+      <li>Открой список турниров на <a href="https://www.worldcubeassociation.org/competitions" target="_blank" rel="noopener">worldcubeassociation.org/competitions</a>, отфильтруй по региону и выбери ближайший с событием <b>3x3x3 Cube</b>.</li>
+      <li>На странице турнира смотри: даты регистрации, лимит участников, взнос, расписание, <b>лимит времени (Time limit)</b> и <b>cutoff</b> для 3×3.</li>
+      <li>Зарегистрируйся и оплати взнос, если он есть. На некоторых турнирах без оплаты запись не засчитывается, а регистрации «на месте» нет вовсе. Читай правила именно этого турнира.</li>
+    </ol>
+    <p class="muted">Турнир должен быть объявлен минимум за 28 дней до начала (требование WCA), поэтому «через месяц» — смотри список уже сейчас. Места на популярные турниры иногда заканчиваются за часы — регистрируйся в день открытия.</p>
+  </div>
+
+  </div>
+
+  <div class="subpanel" data-sub="day">
+  <div class="card">
+    <h3>Как проходит попытка</h3>
+    <ol>
+      <li>Организаторы вызывают группу. Ты приносишь <b>собранный</b> куб и кладёшь его на свою карточку результатов.</li>
+      <li>Скрамблер перемешивает куб по официальной последовательности и ставит под крышку. Раннер несёт его к твоей станции.</li>
+      <li>Судья вызывает тебя. Ты открываешь куб, <b>осмотр — 15 секунд</b>, куб крутить нельзя (только смотреть). На 8-й и 12-й секундах судья называет время.</li>
+      <li>Ты кладёшь ладони на сенсоры Stackmat (ладони вниз, касаясь пальцами), загорается красный, затем зелёный — убираешь руки и собираешь.</li>
+      <li>Закончил — кладёшь ладони на сенсоры, останавливая таймер, и убираешь руки. Судья проверяет куб, записывает время, вы оба расписываетесь.</li>
+    </ol>
+  </div>
+
+  <div class="card">
+    <h3>Штрафы и важные правила</h3>
+    <ul class="plain">
+      <li><b>Осмотр дольше 15 секунд</b> — штраф <b>+2 с</b>; не начал за <b>17 секунд</b> — <b>DNF</b> (попытка не засчитана).</li>
+      <li>Делать ходы в осмотре нельзя: это DNF.</li>
+      <li>Старт и остановка таймера — <b>ладонями вниз, пальцами по сенсорам</b>. Касаться куба в момент старта — +2.</li>
+      <li>Не трогай куб после остановки, пока судья не проверил — иначе возможен DNF.</li>
+      <li>Если слой недокручен, это может дать +2 или DNF — докручивай слои до конца.</li>
+      <li>Сомневаешься — спроси делегата. Это нормально и ожидаемо.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Формат результата</h3>
+    <ul class="plain">
+      <li><b>Среднее из 5 (Ao5)</b>: пять попыток, лучшая и худшая отбрасываются, считается среднее трёх оставшихся. Результат раунда — именно оно.</li>
+      <li><b>Лимит времени</b> на попытку: достиг его — судья останавливает и ставит DNF.</li>
+      <li><b>Cutoff</b>: сначала 1–2 попытки; не уложился — раунд для тебя закончен. Укладываешься — делаешь все пять.</li>
+      <li>Результаты загружаются в базу WCA после проверки делегатом. С этого момента у тебя есть свой профиль и история.</li>
+    </ul>
+  </div>
+
+  </div>
+
+  <div class="subpanel" data-sub="check">
+  <div class="card">
+    <h3>Чек-лист: за неделю и с собой</h3>
+    <ul class="checklist">
+      <li><label><input type="checkbox" data-save="t1"> Аккаунт WCA, регистрация и оплата подтверждены</label></li>
+      <li><label><input type="checkbox" data-save="t2"> Знаю расписание, время вызова группы, адрес и как добраться</label></li>
+      <li><label><input type="checkbox" data-save="t3"> Прочитал <a href="https://documents.worldcubeassociation.org/edudoc/competitor-tutorial/tutorial.pdf" target="_blank" rel="noopener">Competition Tutorial</a></label></li>
+      <li><label><input type="checkbox" data-save="t4"> Куб, смазка, запасной куб (если есть)</label></li>
+      <li><label><input type="checkbox" data-save="t5"> Вода, перекус, удобная одежда</label></li>
+      <li><label><input type="checkbox" data-save="t6"> Потренировал сборки с 15-секундным осмотром (режим осмотра на вкладке «Тренажёр»)</label></li>
+      <li><label><input type="checkbox" data-save="t7"> Не меняю метод и не учу новые алгоритмы за неделю до турнира</label></li>
+    </ul>
+  </div>
+  </div>
+</section>
+
+<!-- ====================================================== ТРЕНАЖЁР -->
+<section id="trainer" class="sec">
+  <h2><span class="num">8</span> Тренажёр: таймер, скрамблер, статистика</h2>
+  <div class="card timer-card">
+    <div class="scramble-row">
+      <div id="scrambleText" class="scramble"></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-sm" id="newScramble">🔀 Новый скрамбл</button>
+      <button class="btn btn-sm" id="showScramble">🧊 На 3D</button>
+      <label class="check"><input type="checkbox" id="inspToggle"> Осмотр 15 с (как на турнире)</label>
+    </div>
+    <div id="timerDisplay" class="timer" tabindex="0" role="button" aria-label="Таймер. Удерживай пробел или касайся экрана">0.00</div>
+    <p id="timerHint" class="timer-hint">Удерживай <kbd>Пробел</kbd> (или палец на таймере), зелёный — отпусти. Любое нажатие останавливает.</p>
+    <div class="stats">
+      <div><span>Лучшая</span><b id="stBest">—</b></div>
+      <div><span>Среднее 5</span><b id="stAo5">—</b></div>
+      <div><span>Среднее 12</span><b id="stAo12">—</b></div>
+      <div><span>Среднее всех</span><b id="stMean">—</b></div>
+      <div><span>Сборок</span><b id="stCount">0</b></div>
+    </div>
+    <div class="btn-row">
+      <button class="btn btn-sm" id="penPlus2">+2</button>
+      <button class="btn btn-sm" id="penDnf">DNF</button>
+      <button class="btn btn-sm" id="delLast">Удалить последнюю</button>
+      <button class="btn btn-sm" id="clearAll">Очистить всё</button>
+    </div>
+    <ol id="timesList" class="times" reversed></ol>
+  </div>
+  <p class="muted">Скрамблы здесь — случайные 20 ходов. Для официальной практики можно использовать <a href="https://cstimer.net/" target="_blank" rel="noopener">csTimer</a> со скрамблами по состоянию.</p>
+</section>
+
+<!-- ====================================================== ИСТОЧНИКИ -->
+<section id="sources" class="sec">
+  <h2>Источники и что смотреть дальше</h2>
+  <ul class="plain">
+    <li><a href="https://www.worldcubeassociation.org/regulations/" target="_blank" rel="noopener">WCA Regulations</a> — правила, штрафы за осмотр (A4).</li>
+    <li><a href="https://documents.worldcubeassociation.org/edudoc/competitor-tutorial/tutorial.pdf" target="_blank" rel="noopener">WCA Competition Tutorial (PDF)</a> — как проходит турнир.</li>
+    <li><a href="https://en.wikipedia.org/wiki/List_of_world_records_in_speedcubing" target="_blank" rel="noopener">Мировые рекорды</a> — данные на октябрь 2026.</li>
+    <li><a href="https://www.speedsolving.com/wiki/index.php/OLL" target="_blank" rel="noopener">SpeedSolving Wiki: OLL</a> и <a href="https://www.speedsolving.com/wiki/index.php/PLL" target="_blank" rel="noopener">PLL</a> — альтернативные алгоритмы к каждому случаю.</li>
+    <li><a href="https://www.speedsolving.com/" target="_blank" rel="noopener">SpeedSolving.com</a> — форум, разборы прогресса.</li>
+    <li><a href="https://ruwix.com/" target="_blank" rel="noopener">Ruwix</a> — классический метод для новичков и справочник.</li>
+    <li>Видеоуроки по CFOP, F2L и пальцевой технике — каналы J Perm и CubeSkills (Feliks Zemdegs) на YouTube.</li>
+  </ul>
+  <p class="muted">Все алгоритмы на странице прогнаны через встроенный симулятор: все 57 OLL дают разные случаи и не ломают F2L, все 21 PLL тоже. Если твой любимый вариант отличается — это нормально, у каждого случая есть несколько алгоритмов.</p>
+</section>
+
+</main>
+
+<!-- ====================================================== 3D ПАНЕЛЬ -->
+<aside class="viewer" id="viewer" aria-label="3D-куб">
+  <div class="v-head">
+    <div class="v-title">3D-куб</div>
+    <button class="v-close" type="button" aria-label="Закрыть">×</button>
+  </div>
+  <div class="v-stage" tabindex="0" aria-label="3D-куб. Тяни, чтобы вращать"></div>
+  <div class="v-hint">Тяни куб, чтобы вращать · двойной клик — сбросить вид</div>
+  <div class="v-moves" aria-label="Ходы алгоритма"></div>
+  <div class="v-status" aria-live="polite"></div>
+  <div class="v-controls">
+    <button type="button" data-v="reset" title="В начало">⏮</button>
+    <button type="button" data-v="back" title="Шаг назад">◀</button>
+    <button type="button" data-v="play" class="play" title="Играть">▶</button>
+    <button type="button" data-v="fwd" title="Шаг вперёд">▶|</button>
+    <button type="button" data-v="flip" title="Вид снизу / сверху">⇅</button>
+    <label class="v-speedwrap" title="Скорость анимации"><span class="v-speed-label">Скорость</span> <input class="v-speed" type="range" min="1" max="5" step="1" value="3" aria-label="Скорость анимации"></label>
+  </div>
+  <div class="v-note"></div>
+  <details class="v-more">
+    <summary>Свободный режим</summary>
+    <div class="v-free"></div>
+  </details>
+</aside>
+</div>
+
+<button id="viewerFab" class="v-fab" type="button">🧊 3D</button>
+
+<footer class="footer">
+  <p>CFOP Путь · самоучитель с 3D-кубом. Все данные сохраняются только у тебя в браузере.</p>
+</footer>
+
+<script src="js/tabs.js"></script>
+<script src="js/cube-core.js"></script>
+<script src="js/data-algs.js"></script>
+<script src="js/cube3d.js"></script>
+<script src="js/viewer.js"></script>
+<script src="js/diagrams.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
