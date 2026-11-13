@@ -2,16 +2,28 @@
 <html lang="ru">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <title>Кубик Рубика по CFOP — самоучитель с 3D-кубом до скоростей топ-уровня</title>
   <meta name="description" content="Самоучитель по CFOP (метод Фридрих) с интерактивным 3D-кубом: F2L, все 57 OLL и 21 PLL, X-Cross, план тренировок и подготовка к турниру WCA.">
+  <!-- приложение: цвет системной строки, иконки и режим «без браузера» -->
+  <meta name="theme-color" content="#0b0e17">
+  <meta name="application-name" content="CFOP Путь">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="CFOP Путь">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icons/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="icons/icon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <link rel="stylesheet" href="css/style.css">
   <script>document.documentElement.className += ' js-tabs';</script>
 </head>
 <body>
 
 <header class="topbar">
-  <a class="brand" href="#goal" aria-label="CFOP Путь — на главную"><span class="brand-cube" aria-hidden="true"></span><span class="brand-text">CFOP&nbsp;Путь</span></a>
+  <a class="brand" href="#goal" aria-label="CFOP Путь — на главную"><img class="brand-icon" src="icons/icon.svg" width="30" height="30" alt=""><span class="brand-text">CFOP&nbsp;Путь</span></a>
   <nav class="nav" id="nav" aria-label="Разделы">
     <a href="#goal">Цель</a>
     <a href="#basics">Основы</a>
@@ -24,6 +36,7 @@
     <a href="#trainer">Тренажёр</a>
     <a href="#sources">Ссылки</a>
   </nav>
+  <button id="installBtn" class="install-btn" type="button" hidden aria-label="Установить как приложение"><span class="install-ico" aria-hidden="true">⬇</span><span class="install-label"> Установить</span></button>
 </header>
 
 <div class="layout">
@@ -630,5 +643,6 @@
 <script src="js/viewer.js"></script>
 <script src="js/diagrams.js"></script>
 <script src="js/app.js"></script>
+<script src="js/pwa.js"></script>
 </body>
 </html>
