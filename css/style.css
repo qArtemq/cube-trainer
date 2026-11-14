@@ -432,9 +432,20 @@ html:not(.js-tabs) .subtabs { display: none; }
   html { scroll-behavior: auto; }
   .viewer { transition: none; }
 }
-/* установленное приложение (без адресной строки): без «оттягивания» страницы и случайного выделения интерфейса */
+/* ================= как приложение: без зума и без выделения ================= */
+/* Зум: разрешены только прокрутка пальцем (pan-x pan-y). Щипок и двойное касание отключены.
+   Куб в 3D-панели имеет свой touch-action: none — он вращается пальцем, как раньше. */
+html, body { touch-action: pan-x pan-y; }
+/* Выделение: запрещено везде, кроме полей ввода (иначе в Safari в них нельзя печатать) */
+*, *::before, *::after {
+  -webkit-user-select: none; user-select: none;
+  -webkit-touch-callout: none;               /* iOS: меню при долгом касании */
+  -webkit-tap-highlight-color: transparent;  /* Android: серая вспышка при нажатии */
+}
+input, textarea, select { -webkit-user-select: text; user-select: text; touch-action: manipulation; }
+img, svg, a { -webkit-user-drag: none; user-drag: none; }
+/* установленное приложение (без адресной строки): без «оттягивания» страницы */
 @media (display-mode: standalone) {
   html, body { overscroll-behavior-y: none; }
-  .topbar, .subtabs, .v-controls, .v-fab, .btn, .chip { -webkit-user-select: none; user-select: none; -webkit-touch-callout: none; }
   .install-btn { display: none; }
 }

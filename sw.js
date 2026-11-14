@@ -4,7 +4,7 @@
    и в корне домена, и в подпапке (например, на GitHub Pages). */
 'use strict';
 
-var CACHE = 'cfop-v1';
+var CACHE = 'cfop-v2';
 var PRECACHE = [
   './',
   'index.html',
@@ -17,6 +17,7 @@ var PRECACHE = [
   'js/viewer.js',
   'js/diagrams.js',
   'js/app.js',
+  'js/lock.js',
   'js/pwa.js',
   'icons/icon.svg',
   'icons/icon-32.png',
